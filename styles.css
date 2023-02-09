@@ -1,0 +1,112 @@
+.page {
+	font-family: "Inter", "Arial", sans-serif;
+	margin: 0 auto;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	color: #ffffff;
+	background-color: #000;
+	min-width: 300px;
+	width: 100%;
+}
+
+.header {
+	margin: 0 auto;
+	padding: 45px 0 0 0;
+	max-width: 880px;
+	border-bottom: 1px solid rgba(84, 84, 84, 1);
+}
+
+.content {
+	margin: 0 auto;
+	min-width: 300px;
+	max-width: 880px;
+}
+
+.logo {
+	width: 142px;
+	height: 33px;
+	margin: 0 0 41px 0;
+}
+
+.profile {
+	padding: 40px 0 50px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile__menu {
+	display: flex;
+	margin: 0;
+	gap: 30px;
+}
+
+.profile__info {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: repeat(2, max-content);
+	grid-template-rows: repeat(2, max-content);
+	grid-template-areas:
+		"name button"
+		"bio bio";
+}
+
+.profile__avatar {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+}
+
+.profile__name {
+	margin: 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 42px;
+	line-height: 114%;
+	grid-area: name;
+}
+
+.profile__bio {
+	margin: 0;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	grid-area: bio;
+}
+
+.profile__edit-button {
+	grid-area: button;
+	margin: 0;
+	padding: 0;
+	align-self: center;
+	background-color: transparent;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+}
+
+.profile__add-button {
+	width: 150px;
+	height: 50px;
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile__button-picture {
+	width: 22px;
+	height: 22px;
+	margin: 0;
+	padding: 0;
+	object-fit: cover;
+}
