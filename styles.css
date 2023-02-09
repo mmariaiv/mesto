@@ -8,7 +8,7 @@
 	-moz-text-size-adjust: 100%;
 	color: #ffffff;
 	background-color: #000;
-	min-width: 300px;
+	min-width: 320px;
 	width: 100%;
 }
 
@@ -21,7 +21,7 @@
 
 .content {
 	margin: 0 auto;
-	min-width: 300px;
+	min-width: 320px;
 	max-width: 880px;
 }
 
@@ -109,4 +109,74 @@
 	margin: 0;
 	padding: 0;
 	object-fit: cover;
+}
+
+.elements {
+	margin: 0 auto;
+	padding: 0 0 66px 0;
+	display: grid;
+	grid-template-columns: repeat(3, max-content);
+	grid-template-rows: repeat(2, max-content);
+	row-gap: 20px;
+	column-gap: 17px;
+}
+
+.element {
+	border-radius: 20px;
+	background-color: #ffffff;
+}
+
+.element__description {
+	display: flex;
+	justify-content: space-between;
+	padding: 25px 0 31px 0;
+	max-width: 246px;
+	margin: 0 auto;
+}
+
+.element__image {
+	border-radius: 20px 20px 0 0;
+	width: 282px;
+	height: 282px;
+	object-fit: cover;
+}
+
+.element__title {
+	margin: 0;
+	padding: 0;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.element__like-button {
+	margin: 0;
+	width: 22px;
+	height: 19px;
+	padding: 0;
+	align-self: center;
+	background-color: transparent;
+	border: none;
+	background-image: url("./images/heart__disabled.svg");
+	background-repeat: no-repeat;
+	background-size: 22px 19px;
+}
+
+.footer {
+	margin: 0 auto;
+	padding: 0 0 60px 0;
+	max-width: 880px;
+}
+
+.footer__copyright {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	color: #545454;
 }
