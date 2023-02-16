@@ -23,14 +23,10 @@
         <div class="profile__info">
           <h2 class="profile__name">Жак-Ив Кусто</h2>
           <p class="profile__bio">Исследователь океана</p>
-          <button class="profile__edit-button">
-            <img src="./images/pencil_for_button.svg" alt="Кнопка редактирования" class="profile__edit-button-picture">
-          </button>
+          <button class="profile__edit-button"></button>
         </div>
       </div>
-      <button class="profile__add-button profile__add-button_disabled profile__add-button_active">
-        <img src="./images/plus__disabled.svg" alt="Изображение плюса" class="profile__button-picture">
-      </button>
+      <button class="profile__add-button profile__add-button_disabled profile__add-button_active"></button>
     </section>
 
 
@@ -88,16 +84,21 @@
     <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
   </footer>
 
-  <div class="edit">
-    <div class="popup">
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__container">
-        <input class="popup__name-input form-text" placeholder="Жак Ив-Кусто" type="text">
-        <input class="popup__description-input form-text" placeholder="Исследователь океана" type="text">
+
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__close-button"></div>
+      <form class="popup__form">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <div class="popup__input-place">
+          <input class="popup__name-input form-text" placeholder="Жак Ив-Кусто" type="text">
+          <input class="popup__description-input form-text" placeholder="Исследователь океана" type="text">
+        </div>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
+
 
 </body>
 
