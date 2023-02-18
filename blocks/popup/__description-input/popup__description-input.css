@@ -1,0 +1,5 @@
+.popup__description-input {
+	all: unset;
+	border-bottom: 1px solid #000;
+	padding-bottom: 13px;
+}
