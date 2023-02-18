@@ -6,12 +6,10 @@ let nameInput = document.querySelector(".popup__name-input");
 let jobInput = document.querySelector(".popup__description-input");
 
 function openPopup() {
-	console.log("popup is opened");
 	formElement.classList.add("popup_opened");
 }
 
 function closePopup() {
-	console.log("popup is closed");
 	formElement.classList.remove("popup_opened");
 }
 
@@ -47,11 +45,9 @@ function setLike(likeButton) {
 	if (likeButton.classList.contains("element__like-button_disabled")) {
 		likeButton.classList.remove("element__like-button_disabled");
 		likeButton.classList.add("element__like-button_active");
-		console.log("лайк стоит");
 	} else {
 		likeButton.classList.remove("element__like-button_active");
 		likeButton.classList.add("element__like-button_disabled");
-		console.log("лайк не стоит");
 	}
 }
 
