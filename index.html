@@ -21,57 +21,57 @@
       <div class="profile__menu">
         <img src="./images/Avatar.png" alt="Аватар пользователя" class="profile__avatar">
         <div class="profile__info">
-          <h2 class="profile__name">Жак-Ив Кусто</h2>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__bio">Исследователь океана</p>
           <button class="profile__edit-button"></button>
         </div>
       </div>
-      <button class="profile__add-button"></button>
+      <button class="profile__add-button" type="button"></button>
     </section>
 
 
     <section class="elements">
 
       <div class="element">
-        <img src="./images/Mask Group.png" alt="Фотография пользователя" class="element__image">
+        <img src="./images/Mask_Group.png" alt="Фотография Карачаевска" class="element__image">
         <div class="element__description">
           <h2 class="element__title">Карачаевск</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
       <div class="element">
-        <img src="./images/Mask Group-1.png" alt="Фотография пользователя" class="element__image">
+        <img src="./images/Mask_Group-1.png" alt="Фотография горы Эльбрус" class="element__image">
         <div class="element__description">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
       <div class="element">
-        <img src="./images/sergievposad_photo.jpg" alt="Фотография пользователя" class="element__image">
+        <img src="./images/sergievposad_photo.jpg" alt="Фотография Сергиева Посада" class="element__image">
         <div class="element__description">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <h2 class="element__title">Сергиев Посад</h2>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
       <div class="element">
-        <img src="./images/Mask Group-2.png" alt="Фотография пользователя" class="element__image">
+        <img src="./images/Mask_Group-2.png" alt="Фотография горы Эльбрус" class="element__image">
         <div class="element__description">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
       <div class="element">
-        <img src="./images/Mask Group-2.png" alt="Фотография пользователя" class="element__image">
+        <img src="./images/Mask_Group-2.png" alt="Фотография Домбая" class="element__image">
         <div class="element__description">
           <h2 class="element__title">Домбай</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
       <div class="element">
-        <img src="./images/Mask Group-1.png" alt="Фотография пользователя" class="element__image">
+        <img src="./images/Mask_Group-1.png" alt="Фотография Карачаево-Черкесска" class="element__image">
         <div class="element__description">
           <h2 class="element__title">Карачаево-Черкессия</h2>
-          <button class="element__like-button element__like-button_disabled"></button>
+          <button class="element__like-button element__like-button_disabled" type="button"></button>
         </div>
       </div>
 
@@ -87,9 +87,9 @@
 
   <div class="popup">
     <div class="popup__container">
-      <div class="popup__close-button"></div>
-      <form class="popup__form">
-        <h2 class="popup__title">Редактировать профиль</h2>
+      <button type="button" class="popup__close-button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form name="edit-profile" class="popup__form">
         <div class="popup__input-place">
           <input class="popup__name-input form-text" placeholder="Жак Ив-Кусто" type="text">
           <input class="popup__description-input form-text" placeholder="Исследователь океана" type="text">
