@@ -1,5 +1,5 @@
 .element__like-button {
-	background-image: url("../../../../images/heart__disabled.svg");
+	background-image: url("../../../images/heart__disabled.svg");
 	margin: 0;
 	width: 22px;
 	height: 19px;
