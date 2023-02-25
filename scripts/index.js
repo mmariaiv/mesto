@@ -38,6 +38,14 @@ function handleFormSubmit(evt) {
 	closePopup();
 }
 
+let likeButtons = document.querySelectorAll(".element__like-button");
+likeButtons.forEach(function (likeButton) {
+	likeButton.addEventListener("click", function (evt) {
+		let likeTarget = evt.target;
+		likeTarget.classList.toggle("element__like-button_active");
+	});
+});
+
 formElement.addEventListener("submit", handleFormSubmit);
 closeForm.addEventListener("click", closePopup);
 editProfileButton.addEventListener("click", openPopup);
