@@ -34,6 +34,7 @@
 
       <div class="element">
         <img src="./images/photo-grid-baikal-2.jpg" alt="Фотография Байкал" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Байкал</h2>
           <button class="element__like-button  " type="button"></button>
@@ -41,6 +42,7 @@
       </div>
       <div class="element">
         <img src="./images/spb_center.jpg" alt="Фотография Центр Петербурга" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Центр Петербурга</h2>
           <button class="element__like-button  " type="button"></button>
@@ -48,6 +50,7 @@
       </div>
       <div class="element">
         <img src="./images/sergievposad_photo.jpg" alt="Фотография Сергиева Посада" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Сергиев Посад</h2>
           <button class="element__like-button  " type="button"></button>
@@ -55,6 +58,7 @@
       </div>
       <div class="element">
         <img src="./images/someshit_street.jpg" alt="Фотография улицы Самшит" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Улица Самщит</h2>
           <button class="element__like-button  " type="button"></button>
@@ -62,6 +66,7 @@
       </div>
       <div class="element">
         <img src="./images/spb_suburban.jpg" alt="Фотография Окраины Спб" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Спб окраины</h2>
           <button class="element__like-button  " type="button"></button>
@@ -69,6 +74,7 @@
       </div>
       <div class="element">
         <img src="./images/moscow_center.jpg" alt="Фотография Москва" class="element__image">
+        <button class="element__delete-button"></button>
         <div class="element__description">
           <h2 class="element__title">Москва</h2>
           <button class="element__like-button  " type="button"></button>
@@ -94,6 +100,21 @@
           <input name="bio" class="popup__input popup__input_type_bio" placeholder="Введите описание" type="text">
         </div>
         <button class="popup__submit-button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup">
+    <div class="popup__container">
+      <button type="button" class="popup__close-button"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form name="add-photo" class="popup__form">
+        <div class="popup__form-container">
+          <input name="picture-name" class="popup__input popup__input_type_picture-name" placeholder="Название"
+            type="text">
+          <input name="link" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" type="text">
+        </div>
+        <button class="popup__submit-button" type="submit">Создать</button>
       </form>
     </div>
   </div>

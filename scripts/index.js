@@ -7,6 +7,10 @@ let jobInput = document.querySelector(".popup__input_type_bio");
 let profileName = document.querySelector(".profile__name");
 let profileDescription = document.querySelector(".profile__bio");
 
+let photoInput = document.querySelector(".popup__input_type_picture-name");
+let linkInput = document.querySelector(".popup__input_type_link");
+let addButton = document.querySelector(".profile__add-button");
+
 function openPopup() {
 	popup.classList.add("popup_opened");
 	nameInput.value = profileName.textContent;
@@ -37,3 +41,4 @@ function handleFormSubmit(evt) {
 formElement.addEventListener("submit", handleFormSubmit);
 closeForm.addEventListener("click", closePopup);
 editProfileButton.addEventListener("click", openPopup);
+addButton.addEventListener("click", openPopup);
