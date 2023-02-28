@@ -1,5 +1,6 @@
 let editProfileButton = document.querySelector(".profile__edit-button");
 let addButton = document.querySelector(".profile__add-button");
+const page = document.querySelector(".page");
 
 let formElement = document.querySelector(".popup__form_profile");
 let nameInput = document.querySelector(".popup__input_type_name");
@@ -12,8 +13,8 @@ let popupEdit = document.querySelector(".popup_edit");
 let popupAdd = document.querySelector(".popup_add");
 
 let photoAddForm = document.querySelector(".popup__form_add-photo");
-let photoInput = document.querySelector(".popup__input_type_picture-name");
-let linkInput = document.querySelector(".popup__input_type_link");
+const photoInput = document.querySelector(".popup__input_type_picture-name");
+const linkInput = document.querySelector(".popup__input_type_link");
 
 const elementContainer = document.querySelector(".elements");
 
@@ -46,21 +47,16 @@ function addPhotoFormSubmit(evt) {
 	elementCard.querySelector(".element__image").alt = photoDescription;
 	elementCard.querySelector(".element__title").textContent = photoDescription;
 
+	const elementImage = elementCard.querySelector(".element__image");
+	elementImage.addEventListener("click", openCard);
+
 	const likeButton = elementCard.querySelector(".element__like-button");
-	likeButton.addEventListener("click", function (likeButtonEvt) {
-		let likeTarget = likeButtonEvt.target;
-		likeTarget.classList.toggle("element__like-button_active");
-	});
+	likeButton.addEventListener("click", setLike);
 
 	const deleteButton = elementCard.querySelector(".element__delete-button");
-	deleteButton.addEventListener("click", function (deleteEvt) {
-		const deleteTarget = deleteEvt.target;
-		const deleteCard = deleteTarget.closest(".element");
-		deleteCard.remove();
-	});
+	deleteButton.addEventListener("click", deleteCard);
 
 	elementContainer.prepend(elementCard);
-
 	closePopup();
 }
 
@@ -86,6 +82,10 @@ closeForms.forEach(function (closeForm) {
 
 formElement.addEventListener("submit", handleFormSubmit);
 photoAddForm.addEventListener("submit", addPhotoFormSubmit);
+photoAddForm.addEventListener("submit", () => {
+	photoInput.value = "";
+	linkInput.value = "";
+});
 
 const initialCards = [
 	{
@@ -127,19 +127,47 @@ initialCards.forEach(function (card) {
 
 const deleteButtons = document.querySelectorAll(".element__delete-button");
 deleteButtons.forEach(function (deleteButton) {
-	deleteButton.addEventListener("click", function (evt) {
-		let deleteTarget = evt.target;
-
-		const deleteCard = deleteTarget.closest(".element");
-		deleteCard.remove();
-	});
+	deleteButton.addEventListener("click", deleteCard);
 });
 
 let likeButtons = document.querySelectorAll(".element__like-button");
 likeButtons.forEach(function (likeButton) {
-	likeButton.addEventListener("click", function (evt) {
-		let likeTarget = evt.target;
-
-		likeTarget.classList.toggle("element__like-button_active");
-	});
+	likeButton.addEventListener("click", setLike);
 });
+
+function setLike(likeEvt) {
+	let likeTarget = likeEvt.target;
+	likeTarget.classList.toggle("element__like-button_active");
+}
+
+function deleteCard(deleteEvt) {
+	let deleteTarget = deleteEvt.target;
+	const deleteCard = deleteTarget.closest(".element");
+	deleteCard.remove();
+}
+
+let images = document.querySelectorAll(".element__image");
+images.forEach(function (image) {
+	image.addEventListener("click", openCard);
+});
+
+function openCard(cardEvt) {
+	let imgOpen = cardEvt.target;
+
+	const photoTemplate = document.querySelector("#photo-template");
+	const popupCard = photoTemplate.content.cloneNode(true);
+	const title = imgOpen.parentElement.querySelector(".element__title");
+
+	popupCard.querySelector(".popup__photo").src = imgOpen.src;
+	popupCard.querySelector(".popup__photo").alt = imgOpen.alt;
+	popupCard.querySelector(".popup__description").textContent =
+		title.textContent;
+
+	const closeButton = popupCard.querySelector(".popup__close-button");
+	closeButton.addEventListener("click", (buttonEvt) => {
+		const closeTarget = buttonEvt.target;
+		const photoCard = closeTarget.closest(".popup");
+		photoCard.classList.remove("popup_opened");
+	});
+	page.append(popupCard);
+}
