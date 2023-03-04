@@ -40,24 +40,29 @@ function addPhotoFormSubmit(evt) {
 
 	let photoDescription = photoInput.value;
 	let photoLink = linkInput.value;
-	const cardTemplate = document.querySelector("#element-template");
-	const elementCard = cardTemplate.content.cloneNode(true);
+	if (
+		photoLink.replaceAll(" ", "") != "" &&
+		photoDescription.replaceAll(" ", "") != ""
+	) {
+		const cardTemplate = document.querySelector("#element-template");
+		const elementCard = cardTemplate.content.cloneNode(true);
 
-	elementCard.querySelector(".element__image").src = photoLink;
-	elementCard.querySelector(".element__image").alt = photoDescription;
-	elementCard.querySelector(".element__title").textContent = photoDescription;
+		elementCard.querySelector(".element__image").src = photoLink;
+		elementCard.querySelector(".element__image").alt = photoDescription;
+		elementCard.querySelector(".element__title").textContent = photoDescription;
 
-	const elementImage = elementCard.querySelector(".element__image");
-	elementImage.addEventListener("click", openCard);
+		const elementImage = elementCard.querySelector(".element__image");
+		elementImage.addEventListener("click", openCard);
 
-	const likeButton = elementCard.querySelector(".element__like-button");
-	likeButton.addEventListener("click", setLike);
+		const likeButton = elementCard.querySelector(".element__like-button");
+		likeButton.addEventListener("click", setLike);
 
-	const deleteButton = elementCard.querySelector(".element__delete-button");
-	deleteButton.addEventListener("click", deleteCard);
+		const deleteButton = elementCard.querySelector(".element__delete-button");
+		deleteButton.addEventListener("click", deleteCard);
 
-	elementContainer.prepend(elementCard);
-	closePopup();
+		elementContainer.prepend(elementCard);
+		closePopup();
+	}
 }
 
 editProfileButton.addEventListener("click", function () {
