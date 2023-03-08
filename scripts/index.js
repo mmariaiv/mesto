@@ -13,6 +13,9 @@ const popupEdit = document.querySelector(".popup_edit");
 const popupAdd = document.querySelector(".popup_add");
 const popupImage = document.querySelector(".popup_image");
 
+const popupDescription = popupImage.querySelector(".popup__description");
+const popupPhoto = popupImage.querySelector(".popup__photo");
+
 const photoAddForm = document.querySelector(".popup__form_add-photo");
 const photoInput = document.querySelector(".popup__input_type_picture-name");
 const linkInput = document.querySelector(".popup__input_type_link");
@@ -154,9 +157,8 @@ function openCard(cardEvt) {
 	const imgOpen = cardEvt.target;
 	const title = imgOpen.closest(".element").querySelector(".element__title");
 
-	popupImage.querySelector(".popup__photo").src = imgOpen.src;
-	popupImage.querySelector(".popup__photo").alt = imgOpen.alt;
-	popupImage.querySelector(".popup__description").textContent =
-		title.textContent;
+	popupPhoto.src = imgOpen.src;
+	popupPhoto.alt = imgOpen.alt;
+	popupDescription.textContent = title.textContent;
 	openPopup(popupImage);
 }
